@@ -2,12 +2,9 @@
   <v-app :theme="theme">
     <v-layout>
       <v-app-bar density="compact">
-
         <template v-slot:prepend>
-          <v-app-bar-nav-icon
-            variant="text"
-            @click.stop="drawer = !drawer"
-          ></v-app-bar-nav-icon>
+          <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer">
+          </v-app-bar-nav-icon>
         </template>
 
         <v-spacer></v-spacer>
@@ -17,7 +14,8 @@
         <v-btn
           :icon="theme === 'light' ? 'mdi-weather-sunny' : 'mdi-weather-night'"
           @click="onClick"
-        ></v-btn>
+        >
+        </v-btn>
         <template v-slot:append>
           <v-btn icon="mdi-dots-vertical"></v-btn>
         </template>
@@ -25,27 +23,24 @@
 
       <v-navigation-drawer width="72" v-model="drawer">
         <router-link to="/">Go to Home</router-link>
-        <v-list :items="items"></v-list
-      ></v-navigation-drawer>
+        <v-list :items="items"></v-list>
+      </v-navigation-drawer>
 
       <v-app-bar height="48" elevation="0"></v-app-bar>
 
       <v-bottom-navigation>
         <v-btn value="recent">
           <v-icon>mdi-history</v-icon>
-
           Recent
         </v-btn>
 
         <v-btn value="favorites">
           <v-icon>mdi-heart</v-icon>
-
           Favorites
         </v-btn>
 
         <v-btn value="nearby">
           <v-icon>mdi-map-marker</v-icon>
-
           Nearby
         </v-btn>
       </v-bottom-navigation>
@@ -53,8 +48,8 @@
       <v-main>
         <router-view></router-view>
       </v-main>
-
     </v-layout>
+
     <v-footer>
       <v-row justify="center" no-gutters>
         <v-btn
@@ -66,6 +61,7 @@
         >
           {{ link }}
         </v-btn>
+
         <v-col class="text-center mt-4" cols="12">
           {{ new Date().getFullYear() }} — <strong>MSW</strong>
         </v-col>
@@ -75,13 +71,11 @@
 </template>
 
 <script setup lang="ts">
-import HelloWorld from "@/components/HelloWorld.vue";
 import { ref } from "vue";
 
 const theme = ref("dark");
 
 const drawer = ref(false);
-const group = ref(null);
 const items = ref([
   {
     title: "Foo",
