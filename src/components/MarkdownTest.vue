@@ -21,6 +21,8 @@ const content: string = `# test
 }
 \`\`\`
 content
+<br/><br/>
+<pre>pre pri pro pru pra</pre>
 
 [test](https://www.test.org){target=_blank}`;
 </script>

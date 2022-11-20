@@ -52,15 +52,16 @@
 
     <v-footer>
       <v-row justify="center" no-gutters>
-        <v-btn
+        <router-link
+          :to="link.link"
           v-for="link in links"
-          :key="link"
+          :key="link.link"
           variant="text"
           class="mx-2"
           rounded="xl"
         >
-          {{ link }}
-        </v-btn>
+          {{ link.title }}
+        </router-link>
 
         <v-col class="text-center mt-4" cols="12">
           {{ new Date().getFullYear() }} — <strong>MSW</strong>
@@ -96,12 +97,8 @@ const items = ref([
 ]);
 
 const links = ref([
-  "Home",
-  "About Us",
-  "Team",
-  "Services",
-  "Blog",
-  "Contact Us",
+  { title: "Home", link: "/" },
+  { title: "Markdown", link: "/md" },
 ]);
 
 function onClick() {
