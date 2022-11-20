@@ -17,6 +17,9 @@ import vuetify from './plugins/vuetify'
 // Router
 import router from './router/index'
 
+// markdown-it
+import markdown from 'vue3-markdown-it'
+
 const app = createApp(App)
 
 registerPlugins()
@@ -24,4 +27,5 @@ registerPlugins()
 app
   .use(vuetify)
   .use(router)
+  .use(markdown)
   .mount('#app')
